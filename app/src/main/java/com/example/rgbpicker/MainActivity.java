@@ -1,13 +1,19 @@
 package com.example.rgbpicker;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public void update(SeekBar r, SeekBar g, SeekBar b){
+        TextView display = findViewById(R.id.display);
+        display.setBackgroundColor(Color.rgb(r.getProgress(),g.getProgress(),b.getProgress()));
+        display.setText("#"+Integer.toHexString(r.getProgress())+Integer.toHexString(g.getProgress())+Integer.toHexString(b.getProgress()));
+}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
         final SeekBar r_seekbar = findViewById(R.id.r_slider);
         final SeekBar g_seekbar = findViewById(R.id.g_slider);
         final SeekBar b_seekbar = findViewById(R.id.b_slider);
-        String color = r_seekbar.getProgress()+g_seekbar.;
         r_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progress = r_seekbar.getProgress();
+                update(r_seekbar,g_seekbar,b_seekbar);
             }
 
             @Override
@@ -35,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         g_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progress = g_seekbar.getProgress();
+                update(r_seekbar,g_seekbar,b_seekbar);
             }
 
             @Override
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         b_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progress = b_seekbar.getProgress();
+                update(r_seekbar,g_seekbar,b_seekbar);
             }
 
             @Override

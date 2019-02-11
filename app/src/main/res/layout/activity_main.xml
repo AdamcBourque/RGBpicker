@@ -15,7 +15,7 @@
         android:textAlignment="center"
         android:textSize="32dp"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Hello World!" />
+        android:text="#000000" />
     <SeekBar
         android:id="@+id/r_slider"
         android:layout_width="match_parent"
