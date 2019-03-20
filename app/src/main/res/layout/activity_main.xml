@@ -16,23 +16,9 @@
         android:textSize="32dp"
         android:textColor="@color/colorPrimaryDark"
         android:text="#000000" />
-    <SeekBar
-        android:id="@+id/r_slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:max="255" />
-    <SeekBar
-        android:id="@+id/g_slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:max="255" />
-    <SeekBar
-        android:id="@+id/b_slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:max="255" />
+
+    <include android:id="@+id/r_slider" layout="@layout/snackbar"></include>
+    <include android:id="@+id/g_slider" layout="@layout/snackbar"></include>
+    <include android:id="@+id/b_slider" layout="@layout/snackbar"></include>
 
 </LinearLayout>
